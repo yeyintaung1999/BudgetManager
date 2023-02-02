@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryEntity" representedClassName="CategoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="month" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthEntity"/>
+        <relationship name="records" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecordEntity" inverseName="category" inverseEntity="RecordEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MonthEntity" representedClassName="MonthEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="RecordEntity" representedClassName="RecordEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryEntity" inverseName="records" inverseEntity="CategoryEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="CategoryEntity" positionX="-414.96875" positionY="-129.99609375" width="128" height="104"/>
+        <element name="MonthEntity" positionX="-207" positionY="-45" width="128" height="59"/>
+        <element name="RecordEntity" positionX="9.55859375" positionY="-59.75390625" width="128" height="118"/>
+    </elements>
+</model>
