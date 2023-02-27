@@ -11,7 +11,7 @@ struct AddIncomeRecordView: View {
     @State var amount: String = ""
     @State var date: Date = Date()
     @State var category: String = "-"
-    @State var note: String = "-"
+    @State var note: String = ""
     
     @State var isPresentAddCategory: Bool = false
     @State var isPresentRemoveCategory: Bool = false

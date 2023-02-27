@@ -124,12 +124,12 @@ struct AddExpenseRecordView: View {
         var total: Double = 0.00
         
         records.forEach { entity in
-            if entity.category?.type == "income" {
+            if entity.category?.type == "expense" {
                 total += entity.amount
             }
         }
         
-        return "+\(total)"
+        return "-\(total)"
     }
 }
 

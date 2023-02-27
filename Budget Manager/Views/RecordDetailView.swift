@@ -85,7 +85,7 @@ struct RecordDetailView: View {
         let formatter = DateFormatter()
         formatter.timeStyle = .full
         formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.dateFormat = "yyyy/MM/dd"
         
         return formatter.string(from: record?.date ?? Date())
     }
