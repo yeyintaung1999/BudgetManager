@@ -18,7 +18,8 @@ struct RecordItemView: View {
                 .foregroundColor(Color(uiColor: getColor()))
         }
         .padding(10)
-        .background(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color(uiColor: UIColor(named: "LightColor")!)))
+        .background(Color(uiColor: UIColor(named: "whiteDL")!))
+//        .background(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color(uiColor: UIColor(named: "LightColor")!)))
     }
     
     func getColor()->UIColor {

@@ -34,7 +34,7 @@ struct AddExpenseRecordView: View {
                     Text("Amount")
                         .font(.system(size: 14, weight: .medium, design: .monospaced))
                         .foregroundColor(Color(uiColor: UIColor(named: "ThemeColor")!))
-                    TextField("Enter Amount", text: $amount)
+                    TextField("Enter Amount", text: $amount).keyboardType(.numberPad)
                     Rectangle().border(.black, width: 1).frame(maxWidth: .infinity, maxHeight: 1)
                 }
                 
@@ -111,7 +111,7 @@ struct AddExpenseRecordView: View {
             AddCategoryView(type: .expense, isPresented: $isPresentAddCategory)
         }
         .sheet(isPresented: $isPresentRemoveCategory) {
-            RemoveCategoryView(categoryList: categories)
+            RemoveCategoryView(categoryList: categories, isPresenting: $isPresentRemoveCategory)
         }
         .alert("Required Amount & Category", isPresented: $isErrorAlert) {
             Button("OK") {

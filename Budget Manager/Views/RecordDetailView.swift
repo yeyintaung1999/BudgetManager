@@ -19,7 +19,7 @@ struct RecordDetailView: View {
                     .foregroundColor(.gray)
                 HStack(alignment:.center){
                     Text(getAmount()).font(.system(size: 30, weight: .light, design: .monospaced))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(uiColor: UIColor(named: "blackDL")!))
                     Text( "(\(signdefault.string(forKey: "sign")!))")
                         .font(.system(size: 14, weight: .ultraLight, design: .monospaced))
                         .foregroundColor(.gray)
@@ -33,28 +33,31 @@ struct RecordDetailView: View {
                     Image(systemName: "calendar").foregroundColor(.gray)
                     Text("Date").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.gray)
                     Spacer()
-                    Text(getDate()).font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.black)
+                    Text(getDate()).font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(Color(uiColor: UIColor(named: "blackDL")!))
                 }.padding([.top], 20)
                 
                 HStack{
                     Image(systemName: "square.grid.2x2").foregroundColor(.gray)
                     Text("Type").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.gray)
                     Spacer()
-                    Text(record?.category?.name ?? "").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.black)
+                    Text(record?.category?.name ?? "").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(Color(uiColor: UIColor(named: "blackDL")!))
                 }.padding([.top], 20)
                 
                 HStack{
                     Image(systemName: "dollarsign.circle").foregroundColor(.gray)
                     Text("Amount").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.gray)
                     Spacer()
-                    Text("\(getAmount()) \(signdefault.string(forKey: "sign")!)").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.black)
+                    Text("\(getAmount()) \(signdefault.string(forKey: "sign")!)")
+                        .font(.system(size: 12, weight: .ultraLight, design: .monospaced))
+                        .foregroundColor(Color(uiColor: UIColor(named: "blackDL")!))
                 }.padding([.top], 20)
                 
                 HStack{
                     Image(systemName: "note.text").foregroundColor(.gray)
                     Text("Note").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.gray)
                     Spacer()
-                    Text(record?.note ?? "-").font(.system(size: 12, weight: .ultraLight, design: .monospaced)).foregroundColor(.black)
+                    Text(record?.note ?? "-").font(.system(size: 12, weight: .ultraLight, design: .monospaced))
+                        .foregroundColor(Color(uiColor: UIColor(named: "blackDL")!))
                 }.padding([.top], 20)
                 Spacer()
             }

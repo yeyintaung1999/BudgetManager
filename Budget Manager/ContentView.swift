@@ -10,7 +10,7 @@ struct ContentView: View {
     init(){
         
         UITabBar.appearance().backgroundColor = UIColor(named: "ThemeColor")!
-        UITabBar.appearance().unselectedItemTintColor = UIColor(named: "SecondaryColor")!
+        UITabBar.appearance().unselectedItemTintColor = UIColor(named: "unselectColor")!
         
     }
     

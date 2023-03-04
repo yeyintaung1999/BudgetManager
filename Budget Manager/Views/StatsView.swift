@@ -3,7 +3,7 @@ import SwiftUI
 struct StatsView: View {
     
     @State var incomeColor = UIColor(named: "ThemeColor")!
-    @State var expenseColor = UIColor.lightGray
+    @State var expenseColor = UIColor.systemGray
     @State var type: RecordType = .income
     
     var monthName: String = ""
@@ -65,7 +65,7 @@ struct StatsView: View {
                         })
                     )
                 }
-            }.background(.white)
+            }.background(Color(uiColor: UIColor(named: "whiteDL")!))
                 .padding([.top, .bottom], 20)
                 .navigationTitle(monthName)
                 .navigationBarTitleDisplayMode(.inline)

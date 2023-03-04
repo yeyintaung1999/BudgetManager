@@ -26,6 +26,9 @@ struct WelcomeView: View {
                 .frame(height: 50)
                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(textFieldColor))
                 .padding(20)
+                .onSubmit {
+                    didEndEditing()
+                }
                 
             Spacer()
             Button {
@@ -33,9 +36,7 @@ struct WelcomeView: View {
                     textFieldColor = .red
                 }else {
                  
-                    setSignDefault(sign: value)
-                    
-                    isPresented = true
+                    didEndEditing()
                 }
             } label: {
                 HStack{
@@ -44,7 +45,6 @@ struct WelcomeView: View {
                 }
             }.padding([.bottom], 50)
             
-            
         }
         .fullScreenCover(isPresented: $isPresented) {
             ContentView()
@@ -52,7 +52,11 @@ struct WelcomeView: View {
         .background(Color(uiColor: UIColor(named: "SecondaryColor")!))
     }
     
-
+    func didEndEditing(){
+        setSignDefault(sign: value)
+        
+        self.isPresented = true
+    }
     
 }
 

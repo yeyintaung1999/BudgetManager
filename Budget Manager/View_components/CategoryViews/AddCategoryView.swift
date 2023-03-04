@@ -26,12 +26,14 @@ struct AddCategoryView: View {
                     TextField("eg. Salary", text: $name)
                         .padding(10)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.secondary))
+                        .onSubmit {
+                            didEndEditing()
+                        }
                 }
                 
                 Button(action: {
                     
-                    model.addCategory(name: name, type: type)
-                    isPresented = false
+                    didEndEditing()
                 }, label: {
                     Text("Add")
                 })
@@ -52,6 +54,11 @@ struct AddCategoryView: View {
                     Text("Cancel")
                 }))
         }
+    }
+    
+    func didEndEditing(){
+        model.addCategory(name: name, type: type)
+        isPresented = false
     }
 }
 

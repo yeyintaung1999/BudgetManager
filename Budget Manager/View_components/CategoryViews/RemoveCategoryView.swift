@@ -14,6 +14,7 @@ struct RemoveCategoryView: View {
     let categoryModel = CategoryModel.shared
     let recordModel = RecordModel.shared
     
+    @Binding var isPresenting: Bool
     @State var indexSet = IndexSet()
     
     @State var isShowingAlert: Bool = false
@@ -37,6 +38,14 @@ struct RemoveCategoryView: View {
                     isShowingAlert = true
                 }
             }
+            .toolbar {
+                Button {
+                    isPresenting = false
+                } label: {
+                    Text("Cancel")
+                }
+            }
+            .navigationTitle("Remove Category")
         }
         .alert("Related Records will also be Removed! Confirm to Remove!", isPresented: $isShowingAlert) {
             Button {
@@ -68,6 +77,6 @@ struct RemoveCategoryView: View {
 
 struct RemoveCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        RemoveCategoryView()
+        RemoveCategoryView(isPresenting: .constant(true))
     }
 }

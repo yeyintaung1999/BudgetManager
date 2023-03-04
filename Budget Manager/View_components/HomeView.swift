@@ -26,11 +26,10 @@ struct HomeListView: View {
                             }
                         }
                         .padding([.top], 20)
-                        .background(RoundedCorners(color: .white, tl: 20, tr: 20, bl: 0, br: 0))
                     }
-                    .background(Color.init(uiColor: .white))
+                    .background(Color(uiColor: UIColor(named: "whiteDL")!))
                 }
-                .background(.white)
+                .background(Color(uiColor: UIColor(named: "whiteDL")!))
                 .navigationTitle("Balance")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {

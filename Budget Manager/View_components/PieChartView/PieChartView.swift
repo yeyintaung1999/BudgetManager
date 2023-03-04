@@ -35,7 +35,7 @@ public struct PieChartView: View {
         self.formatter = formatter
         
         self.colors = getColorArray(categories: categories)//getColorArray(count: values.count)
-        self.backgroundColor = .white
+        self.backgroundColor = Color(uiColor: UIColor(named: "whiteDL")!)
         self.widthFraction = widthFraction
         self.innerRadiusFraction = innerRadiusFraction
         self.categories = categories

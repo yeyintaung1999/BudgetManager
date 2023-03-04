@@ -28,6 +28,7 @@ struct FirstView: View {
                 }
             }.padding(20)
         }
+
         .sheet(isPresented: $isPresentingAddIncomeRecordView){
             AddIncomeRecordView(isPresented: $isPresentingAddIncomeRecordView)
         }
